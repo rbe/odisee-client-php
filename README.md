@@ -22,3 +22,12 @@
     $odisee->setTableCellValue($request, 'Tabelle1', 'A4', 'value in a table cell');
     // Generate document, PDF by default
     $document = $odisee->process();
+
+## Using the fluent API
+
+    // Example using fluent API
+    $odisee = Odisee::createClient('http://service.odisee.de', 'username', 'password');
+    // $request = $odisee->createRequest('HalloOdisee')
+    $odisee->setUserfield($request, 'hallo', 'Odisee von PHP am ' . $d)
+           ->setTableCellValue($request, 'Tabelle1', 'A4', 'support@odisee.de')
+    $document = $odisee->process();

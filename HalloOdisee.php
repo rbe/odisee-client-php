@@ -37,13 +37,7 @@ if (class_exists('Odisee\Odisee', true)) {
     $odisee->setTableCellValue($request, 'Tabelle1', 'A4', 'support@odisee.de');
     // Generate document, PDF by default
     $document = $odisee->process();
-    // Example using fluent API
-    // $odisee = Odisee::createClient('http://service.odisee.de', 'odisee', 'odisee');
-    // $request = $odisee->createRequest('HalloOdisee')
-    // $odisee->setUserfield($request, 'hallo', 'Odisee von PHP am ' . $d)
-    //        ->setTableCellValue($request, 'Tabelle1', 'A4', 'support@odisee.de')
-    // $document = $odisee->process();
-    // Set content type and stream generated document
+     // Set content type and stream generated document
     header("Content-Type: application/pdf", TRUE);
     echo file_get_contents($document);
 }
